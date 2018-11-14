@@ -1,0 +1,170 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Alfabeta</title>
+	<link rel="shortcut icon" href="{%static 'imagenes/img/icono'%}" type="image/png"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width">
+
+	<!--ARCHIVOS CSS-------------------------------------------------------------------------------------------->
+	<link rel="stylesheet" href="{% static 'CSS/flexboxgrid.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'CSS/index-estilo.css' %}">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	
+	<!--ARCHIVOS JS--------------------------------------------------------------------------------------------->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="{% static 'JS/index-js.js' %}"></script>
+	
+</head>
+<body>
+   <div class="container" style="width:100%;">  
+	<nav class="row">
+		  <div class="col-xs-12 col-sm-6 col-md-3">
+		   <img  src="{%static 'imagenes/img/logo_nombre.png' %}" id="logo" alt="no se pudo cargar la imagen"> 
+		  </div>
+		  <div class="col-xs-12 col-md-9">
+		  <div class="col-xs-12 col-sm-2 menu">
+			  <a href="index.html" style="color:white;">Inicio</a>
+		    </div>
+		  <div class="col-xs-12 col-sm-2 menu boton" >
+				<a href="formulario.html" style="color:white;" >Registrate</a>
+		  </div>
+		  <div class="col-xs-12 col-sm-3 menu">Quienes Somos</div>
+		  <div class="col-xs-12 col-sm-2 menu">Catalogo</div>  
+		  <div class="col-xs-12 col-sm-3 menu">Contáctanos</div>	
+		  
+		  </div>
+    </nav>
+	
+	<header class="row">
+		<div class="awSlider col-xs-12 col-md-8">
+		   <div  class="carousel slide " data-ride="carousel">
+			  <!-- Indicators -->
+				<ol class="carousel-indicators">
+					 <li data-target=".carousel" data-slide-to="0" class="active"></li>
+					 <li data-target=".carousel" data-slide-to="1"></li>
+					 <li data-target=".carousel" data-slide-to="2"></li>
+				</ol>
+			   <!-- Wrapper for slides -->
+				<div class="carousel-inner" role="listbox">
+					 <div class="item active">
+					  <img src="{%static 'imagenes/carrusel/alfajores1.jpg' %}" class="imgcarrusel" alt="no se pudo cargar la imagen">
+					 </div>
+					 <div class="item">
+					  <img src="{%static 'imagenes/carrusel/alfajores2.jpg' %}" class="imgcarrusel" alt="no se pudo cargar la imagen">
+					 </div>
+					 <div class="item">
+					  <img src="{%static 'imagenes/carrusel/alfajores3.jpg' %}" class="imgcarrusel" alt="no se pudo cargar la imagen">
+					 </div>
+				</div>
+				  <!-- Controls -->
+				<a class="left carousel-control" href=".carousel" role="button" data-slide="prev">
+					 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					 <span class="sr-only">Geri</span>
+				</a>
+				<a class="right carousel-control" href=".carousel" role="button" data-slide="next">
+					 <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					 <span class="sr-only">İleri</span>
+				</a>
+		   </div>
+		  </div>
+		   
+			   <center class="col-xs-12 col-md-4">
+			   <div class="col-xs-4 col-md-12" style="padding-top: 10%; padding-bottom: 10%; height: 33%;" >
+				  <a href="https://es-la.facebook.com/"><img src="{%static 'imagenes/redes/facebook.png' %}" style="width:20%;"></a></div>
+			   <div class="col-xs-4 col-md-12" style="padding-top: 10%; padding-bottom: 10%; height: 33%;">
+				  <a href="https://mail.google.com"><img src="{%static 'imagenes/redes/mail.png' %}" style="width:20%;"></a></div>
+			   <div class="col-xs-4 col-md-12" style="padding-top: 10%; padding-bottom: 10%; height: 34%;">
+				  <a href="https://www.instagram.com/"><img src="{%static 'imagenes/redes/instagram.png' %}" style="width:20%;"></a></div>
+			   </center>
+	   </header>
+
+	   
+	
+	
+	 <section class="row">
+	  <article class="col-xs-12 col-lg-6 derecha">
+	    <h3 class="subt"> CALIDAD </h3>
+		<h5 class="piesubt"> PREPARACION </h5>
+		<a>________</a>
+		<p id="textoi">
+		Nuestros productos son "artesanales" y preparados con ingredientes de alta calidad
+
+		<p>
+	    <img src="{%static 'imagenes/img/ingredientes1.jpg' %}" id="rescate" alt="no se pudo cargar la imagen">
+	  </article>
+	  <article class="col-xs-12 col-lg-6 izquierda" >
+	    <img src="{%static 'imagenes/img/alfajores3.jpg' %}" id="comida" alt="no se pudo cargar la imagen"/>
+		<h3 class="subt" > VARIEDAD </h3>
+		<h5 class="piesubt"> RECETAS DE DIVERSOS PAISES </h5>
+		<a>________</a>
+		<p id="textod"> 
+		 Contamos con recetas tradicionales de alfajores importadas de diversos
+		 paises y recetas propias que te encantaran.
+        </p>
+		<button> CATALOGO </button>
+      </article>
+	  
+		<!--Pop up -->
+		<div class="modal" id="modal1">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h1 class="modal-title" id="perriteName"></h1>
+						<button class="close" type="button" data-dismiss="modal">x</button>
+					</div>
+					<div class="modal-body">
+						<h3 id="breveResena"></h3>
+						<div id="perrite"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<!--
+	  <article id="galeria">
+	     <div class="col-xs-4" style="padding:0px;">
+		  <a href="#" data-toggle="modal" data-target="#modal1" class="modalUp">
+				<img style="width:107%; height:38%; margin:3px;" src="imagenes/rescatados/Oso_tn.jpg" alt="no se pudo cargar la imagen"/>
+		  </a>
+		  <a href="#" data-toggle="modal" data-target="#modal1" class="modalUp">
+				<img style="width:100%; height:28%; margin:3px;" src="imagenes/rescatados/Maya_tn.jpg" alt="no se pudo cargar la imagen"/>
+		  </a>
+		  <a href="#" data-toggle="modal" data-target="#modal1" class="modalUp">
+			<img style="width:100%; height:27%; margin:3px;" src="imagenes/rescatados/Wifi_tn.jpg" alt="no se pudo cargar la imagen"/>
+		  </a>
+		 </div>
+		 <div class="col-xs-4" style="padding:0px; text-align:center;">
+		  <a href="#" data-toggle="modal" data-target="#modal1" class="modalUp">
+			<img style="width:70%; height:60%; margin:3px; padding-bottom:7%; " src="imagenes/rescatados/Chocolate_tn.jpg" alt="no se pudo cargar la imagen"/>
+		  </a>
+		  <a href="#" data-toggle="modal" data-target="#modal1" class="modalUp">
+			<img style="width:70%; height:40%; margin:3px;" src="imagenes/rescatados/Pexel_tn.jpg" alt="no se pudo cargar la imagen"/>
+		  </a>
+		 </div>
+		 <div class="col-xs-4" style="padding:0px;">
+		  <a href="#" data-toggle="modal" data-target="#modal1" class="modalUp">
+					<img style="width:107%; height:70%; margin:3px; padding-bottom:7%;" align="right"src="imagenes/rescatados/Bigotes_tn.jpg" alt="no se pudo cargar la imagen"/>
+		  </a>
+		  <a href="#" data-toggle="modal" data-target="#modal1" class="modalUp">
+					<img style="width:107%; height:28%; margin:3px;" src="imagenes/rescatados/Luna_tn.jpg" align="right" alt="no se pudo cargar la imagen"/>
+		  </a>
+		 </div>
+	  </article>-->
+	 </section>
+	
+	<footer class="row">
+	<p>
+	    <a href="http://jigsaw.w3.org/css-validator/check/referer" style="float:right;">
+        	<img style="border:0;width:88px;height:31px;"
+            src="http://jigsaw.w3.org/css-validator/images/vcss"
+            alt="¡CSS Válido!" />
+   	    </a>
+	</p>	
+	 <h4> Desarrollo Web y Mobile</h4>
+	
+	</footer>
+   </div>
+</body>		
+</html>
