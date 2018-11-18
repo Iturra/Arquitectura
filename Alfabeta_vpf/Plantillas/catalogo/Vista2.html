@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, intial-scale=1.0">
+
+		<title>Vista de catalogo</title>
+
+		<!-- scripts -->
+		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+		<script src="{% static 'js/Vista.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/jquery-latest.min.js' %}"></script>
+
+		<!-- JQuery -->
+		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7js/jquery.min.js"></script>
+
+		<!-- links -->
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/Estilopag.css' %}">
+
+		<!-- linkeos del fancy -->
+		<link rel="stylesheet" href="{% static './source/jquery.fancybox.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="{% static './source/helpers/jquery.fancybox-buttons.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="{% static './source/helpers/jquery.fancybox-thumbs.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.1/jquery.fancybox.min.css" />
+		<!-- scripts del fancy -->
+		<script type="text/javascript" src="{% static 'lib/jquery.mousewheel-3.0.6.pack.js' %}"></script>
+		<script type="text/javascript" src="{% static 'source/jquery.fancybox.pack.js?v=2.1.7' %}"></script>
+		<script type="text/javascript" src="{% static 'source/helpers/jquery.fancybox-buttons.js?v=1.0.5' %}"></script>
+		<script type="text/javascript" src="{% static 'source/helpers/jquery.fancybox-media.js?v=1.0.6' %}"></script>
+		<script type="text/javascript" src="{% static 'source/helpers/jquery.fancybox-thumbs.js?v=1.0.7' %}"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.1/jquery.fancybox.min.js%22%3E"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.1/jquery.fancybox.min.css" />
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.1/jquery.fancybox.min.css" />
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.1/jquery.fancybox.min.js%22%3E"/>
+
+    	<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" />
+		<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$(".fancybox").fancybox();
+			});
+		</script>
+
+
+	</head>
+	<body>
+		<div id="contenido" class="content">
+			<header>
+					<hgroup>
+						<h1>Vista de catalogo productos</h1>
+					</hgroup>
+					<nav>
+						<ul>
+							<li><a href="{% url 'catalogo:index' %}">Inicio</a></li>
+							<li><a href="{% url 'catalogo:vista2' %}">Catalogo de productos</a></li>
+						</ul>
+					</nav>
+			</header>
+		</div>
+
+			<section>
+				<div id="Producto">
+					<div class="row">
+							<hgroup>
+								<h1>Productos</h1>
+							</hgroup>
+
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<td>ID</td>
+										<td>Fotografia</td>
+										<td>Nombre</td>
+										<td>Precio</td>
+										<td>Descripcion</td>
+									</tr>
+								</thead>
+								<tbody>
+									{% if object_list %}
+									{% for Producto in object_list %}
+
+											<tr>
+												<td>{{Producto.id}}</td>
+												<td><img src='{{Producto.fotografia.url}}' style=" width:30%; height: 20%;"></td>
+												<td>{{Producto.nombre}}</td>
+												<td>{{Producto.precio}}</td>
+												<td>{{Producto.descripcion}}</td>
+
+												<td>
+													<a class="btn btn-primary" >comprar</a>
+												</td>
+											</tr>
+										
+									{% endfor %}
+
+									{% else %}
+									<h1>No hay registros de Productos</h1>
+
+									{% endif %}
+								</tbody>
+							</table>
+					</div>
+				</div>
+			</section>
+
+
+	</body>
+</html>

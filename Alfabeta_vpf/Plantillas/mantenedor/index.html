@@ -1,0 +1,19 @@
+{% extends 'mantenedor/base/base.html' %}
+
+	{% block content %}
+	<div class="col-xs-12 col-lg-6 mx-auto">
+		<div class="text-center">
+			<br>
+			<h3 class="text-dark">Bienvenido al mantenedor de Productos</h3>
+			<br>
+			<nav class="nav flex-column">
+			  <a class="nav-link active text-white bg-dark" href="agregar">Agregar Producto</a>
+			  <br>
+			  <a class="nav-link text-white bg-dark" href="listar">Listar,Modificar, Eliminar Producto</a>
+				<br>
+				<a class="nav-link text-white bg-dark" href="http://localhost:8000/">Volver a la pagina inicial</a>
+			</nav>
+			<br>
+		</div>
+	</div>
+	{% endblock %}

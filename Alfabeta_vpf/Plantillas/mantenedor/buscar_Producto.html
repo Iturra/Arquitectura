@@ -1,0 +1,42 @@
+{% extends 'mantenedor/base/base.html' %}
+
+{% block content %}
+	<div class="col-xs-12 col-lg-6 mx-auto">
+		<div class="col-xs-12 col-lg-8 mx-auto">
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<td>ID</td>
+					<td>Fotografia</td>
+					<td>Nombre</td>
+					<td>Precio</td>
+					<td>Descripcion</td>
+					<td>Acciones</td>
+				</tr>
+			</thead>
+			<tbody>
+				{% if object_list %}
+				{% for Producto in object_list %}
+				<tr>
+					<td>{{Producto.id}}</td>
+					<td>{{Producto.fotografia}}</td>
+					<td>{{Producto.nombre}}</td>
+					<td>{{Producto.precio}}</td>
+					<td>{{Producto.descripcion}}</td>
+					<td>
+						<a class="btn btn-primary" href="{% url 'mantenedor:actualizar_Producto' Producto.id %}">Editar</a>
+						<a class="btn btn-danger" href="{% url 'mantenedor:eliminar_Producto' Producto.id %}">Editar</a>
+					</td>
+				</tr>
+				{% endfor %}
+
+				{% else %}
+				<h3>No hay registros de Productos</h3>
+
+				{% endif %}
+			</tbody>
+		</table>
+		<a class="btn btn-primary" href="{% url 'mantenedor:index' %}">Volver</a>
+	</div>
+	</div>
+{% endblock %}
