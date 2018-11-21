@@ -3,7 +3,6 @@ from Apps.mantenedorproductos import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-
     url(r'^agregar$', views.ProductoCreate.as_view(), name='agregar_Producto'),
     url(r'^listar', views.ProductoList.as_view(), name='listar_Producto'),
     url(r'^modificar/(?P<pk>\d+)/$', views.ProductoUpdate.as_view(), name='actualizar_Producto'),

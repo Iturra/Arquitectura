@@ -25,12 +25,9 @@
 		   <img  src="{%static 'imagenes/img/logo_nombre.png' %}" id="logo" alt="no se pudo cargar la imagen">
 		  </div>
 		  <div class="col-xs-12 col-md-9">
-		  <div class="col-xs-12 col-sm-2 menu">
-			  <a href="index.html" style="color:white;">Inicio</a>
+		  <div class="col-xs-12 col-sm-2 menu"><a href="http://127.0.0.1:8000/" style="color:white;">Inicio</a>
 		    </div>
-		  <div class="col-xs-12 col-sm-2 menu boton" >
-				<a href="formulario.html" style="color:white;" >Registrate</a>
-		  </div>
+		  <div class="col-xs-12 col-sm-2 menu boton" >Registrate </div>
 		  <div class="col-xs-12 col-sm-3 menu">Quienes Somos</div>
 		  <div class="col-xs-12 col-sm-2 menu" ><a href="{% url 'catalogo:index'%}"> Catalogo</a></div>
 		  <div class="col-xs-12 col-sm-3 menu">Contáctanos</div>
@@ -81,6 +78,7 @@
 
 			 						{% if actual.perfiles == Administrador %}
 			 						<a href="{% url 'mantenedor:index'%}">Gestion Productos</a>
+									<a href="{% url 'ventaproducto:index'%}">Comprar Alfajor</a>
 			 						{%endif%}
 			             		{%endif%}
 			 		            <nav style="background-color:white;">

@@ -45,27 +45,28 @@
 
 
 			<header >
-				<hgroup>
+				<hgroup style="border: 5px solid red; background-color: rgba(255, 0, 0, 0.5);">
 					<h1>Vista de Catalogo de Productos</h1>
 				</hgroup>
 				<nav>
-					<ul>
+					<ul style="border: 5px solid green;">
 						<li><a href="{% url 'catalogo:index' %}">Inicio</a></li>
 						<li><a href="{% url 'catalogo:vista2' %}">Listado de Productos</a></li>
+						<li><a href="http://127.0.0.1:8000/">Volver al menu principal</a></li>
 					</ul>
 				</nav>
 			</header>
 
-			<section >
-				<div id="producto " >
+			<section  >
+				<div id="producto "  >
 					<div class="row col-xs-3 col-md-8 col-lg-12" >
 						<hgroup>
-							<center>
+							<center style="border: 5px solid black; background-color: rgba(300, 0, 0, 0.5);">
 								<h1>¿Que tipo de productos tiene?</h1>
 							</center>
 						</hgroup>
-						<article>
-							<h2>Somos una micro-empresa de ventas de alfajores artesanales, en la cual nos encargamos de dar ese pequeño momento de dulzura y placer al comer un alfajor hecho en casa.</h2>
+						<article >
+							<h2><b>Somos una micro-empresa de ventas de alfajores artesanales, en la cual nos encargamos de dar ese pequeño momento de dulzura y placer al comer un alfajor hecho en casa.</b></h2>
 						</article>
 					</div><!-- row -->
 				</div>

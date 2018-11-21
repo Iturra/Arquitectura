@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'Apps.index',
     'Apps.mantenedorproductos',
     'Apps.catalogo',
+    'Apps.ventaproducto',
 ]
 
 MIDDLEWARE = [

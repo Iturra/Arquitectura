@@ -5,7 +5,6 @@ from django import forms
   #  password=forms.CharField(widget=forms.PasswordInput(),label="contraseña")
    # correo=forms.EmailField(widget=forms.EmailInput(),label="Correo")
 perfiles=(
-    ('Administrador','Administrador'),
     ('Usuario','Usuario'),
 )
 

@@ -31,7 +31,7 @@ urlpatterns = [
     url(r'^registrar/$',views.agregarusuario,name="agregarusuario"),
     url(r'^mantenedor/',include(('Apps.mantenedorproductos.urls', 'mantenedor'), namespace='mantenedor')),
     url(r'^vista-catalogo/', include(('Apps.catalogo.urls', 'catalogo'), namespace='catalogo')),
-
+    url(r'^vista-venta/',include(('Apps.ventaproducto.urls', 'ventaproducto'), namespace='ventaproducto')),
     #Recuperar contraseña
 
     url(r'^password-reset/$', auth_views.PasswordResetView.as_view(template_name='registration/password_reset_form.html'), name="password_reset"),
