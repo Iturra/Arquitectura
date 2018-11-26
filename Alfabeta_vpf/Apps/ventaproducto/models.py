@@ -3,7 +3,7 @@ from Apps.mantenedorproductos.models import Producto
 from django.forms import ModelForm
 # Create your models here.
 class Pedido(models.Model):
-    producto = models.OneToOneField(Producto,blank=True,on_delete=models.CASCADE)
+    producto = models.ForeignKey(Producto,on_delete=models.CASCADE)
     cantidad = models.IntegerField()
     pagar = models.IntegerField()
 

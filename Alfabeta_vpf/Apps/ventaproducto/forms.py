@@ -30,17 +30,29 @@ figuras=(
 (4,"Sin figuras"),
 )
 
-Cantidad=(
-(1,1),
-(1,1),
-(1,1),
-(1,1),
-(1,1),
-(1,1),
-(1,1),
-(1,1),
-(1,1),
-)
+class AgregarVentaNormalForm(forms.ModelForm):
+	class Meta:
+		model = Pedido
+
+		fields = [
+			"producto",
+			"cantidad",
+			"pagar",
+
+		]
+		labels = {
+			'producto': 'Seleccione el producto a comprar',
+			'cantidad': 'Ingrese la cantidad a comprar',
+			'pagar': 'pagar',
+
+		}
+		widgets = {
+            'producto': forms.Select(attrs={'class':'form-control'}),
+			'cantidad': forms.NumberInput(attrs={'class':'form-control'}),
+			'pagar': forms.NumberInput(attrs={'class':'form-control'}),
+
+		}
+
 
 class AgregarVentaNormal(forms.Form):
     producto=forms.ModelChoiceField(queryset=Producto.objects.all())

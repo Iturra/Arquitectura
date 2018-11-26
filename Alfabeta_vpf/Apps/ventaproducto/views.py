@@ -11,6 +11,15 @@ from Apps.ventaproducto.models import *
 def index(request):
 	return render(request, 'ventaproducto/index.html')
 
+def mensaje(request):
+	return render(request, 'ventaproducto/mensaje.html')
+
+class PedidoCreate(CreateView):
+	model = Pedido
+	form_class = AgregarVentaNormalForm
+	template_name = 'ventaproducto/agregar_ventanormal.html'
+	success_url = reverse_lazy('ventaproducto:mensaje')
+
 def agregarpedidonormal(request):
      form=AgregarVentaNormal(request.POST)
      if form.is_valid():
