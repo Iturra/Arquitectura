@@ -6,28 +6,40 @@ from django.db import models
 from django.forms import ModelForm
 
 rellenos=(
-("Manjar","Manjar"),
-("Mermelada","Mermelada"),
-("Sin Relleno","Sin Relleno"),
+(1,"Manjar"),
+(2,"Mermelada"),
+(3,"Sin Relleno"),
 )
 
 galletas=(
-("Vainilla","Vainilla"),
-("Coco","Coco"),
-("Chocolate","Chocolate"),
+(1,"Vainilla"),
+(2,"Coco"),
+(3,"Chocolate"),
 )
 
 coberturas=(
-("Chocolate","Chocolate"),
-("Chocolate Blanco","Chocolate Blanco"),
-("Sin Cobertura","Sin Cobertura"),
+(1,"Chocolate"),
+(2,"Chocolate Blanco"),
+(3,"Sin Cobertura"),
 )
 
 figuras=(
-("Corazon","Corazon"),
-("Flor","Flor"),
-("Calavera","Calavera"),
-("Sin figuras","Sin figuras"),
+(1,"Corazon"),
+(2,"Flor"),
+(3,"Calavera"),
+(4,"Sin figuras"),
+)
+
+Cantidad=(
+(1,1),
+(1,1),
+(1,1),
+(1,1),
+(1,1),
+(1,1),
+(1,1),
+(1,1),
+(1,1),
 )
 
 class AgregarVentaNormal(forms.Form):

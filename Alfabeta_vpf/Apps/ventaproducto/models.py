@@ -13,4 +13,4 @@ class Pedidoespecial(models.Model):
     galleta = models.CharField(max_length=40)
     cobertura = models.CharField(max_length=40)
     figura = models.CharField(max_length=40)
-    cantidad = models.IntegerField()
+    cantidad = models.CharField(max_length=40)
