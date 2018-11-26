@@ -18,3 +18,4 @@ class AgregarUsuario(forms.Form):
 class Login(forms.Form):
     username=forms.CharField(widget=forms.TextInput(),label="Nombre Usuario")
     password=forms.CharField(widget=forms.PasswordInput(),label="Contraseña")
+ 

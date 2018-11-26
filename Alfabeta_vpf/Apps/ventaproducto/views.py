@@ -3,25 +3,31 @@ from django.http import HttpResponse
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView, TemplateView
 from django.views.generic.edit import FormView
-
-from Apps.ventaproducto.forms import AgregarPedido,AgregarPedidoEspecial
-from Apps.ventaproducto.models import Pedido,Pedidoespecial
+from django.contrib.auth import authenticate
+from Apps.ventaproducto.forms import *
+from Apps.ventaproducto.models import *
 # Create your views here.
 
 def index(request):
 	return render(request, 'ventaproducto/index.html')
 
+def agregarpedidonormal(request):
+     form=AgregarVentaNormal(request.POST)
+     if form.is_valid():
+         data=form.cleaned_data
+         pedidos=Pedido(data.get("producto"),data.get("cantidad"),data.get("pagar"))
+
+         pedidos.save()
 
 
+     form=AgregarVentaNormal()
+     return render(request,"ventaproducto/agregar_ventanormal.html",{'form':form,'Pedido':Pedido,})
 
-class VentaNormalCreate(CreateView):
-	model = Pedido
-	form_class = AgregarPedido
-	template_name = 'ventaproducto/agregar_venta.html'
-	success_url = reverse_lazy('ventaproducto:index')
-
-class VentaEspecialCreate(CreateView):
-	model = Pedidoespecial
-	form_class = AgregarPedidoEspecial
-	template_name = 'ventaproducto/agregar_venta.html'
-	success_url = reverse_lazy('ventaproducto:index')
+def agregarpedidoespecial(request):
+     form=AgregarVentaEspecial(request.POST)
+     if form.is_valid():
+         data=form.cleaned_data
+         pedidos=Pedidoespecial(data.get("relleno"),data.get("galleta"),data.get("cobertura"),data.get("figura"),data.get("cantidad"))
+         pedidos.save()
+     form=AgregarVentaEspecial()
+     return render(request,"ventaproducto/agregar_ventaespecial.html",{'form':form,'Pedidoespecial':Pedidoespecial,})
